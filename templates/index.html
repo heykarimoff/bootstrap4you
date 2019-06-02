@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <h1 class="my-4">
+      Most recent articles
+    </h1>
+
+    {% if articles %}
+
+      {% for article in articles_page.object_list %}
+
+        <!-- Blog Post -->
+        <div class="card mb-4">
+            <img class="card-img-top" src="{{ article.image }}" alt="Card image cap">
+            <div class="card-body">
+              <h2 class="card-title">{{ article.title }}</h2>
+              <a href="{{ SITEURL }}/articles/{{ article.url }}" class="btn btn-primary">Read More &rarr;</a>
+            </div>
+            <div class="card-footer text-muted">
+              Posted on {{ article.locale_date }} by
+              {% for author in article.authors %}
+                <a href="{{ SITEURL }}/{{ author.url }}">{{ author }}</a>
+              {% endfor %}
+              In <a href="{{ SITEURL }}/{{ article.category.url }}">{{ article.category }}</a>.
+            </div>
+        </div>
+
+      {% endfor %}
+
+    {% endif %}
+
+{% endblock %}

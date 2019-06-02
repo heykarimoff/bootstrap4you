@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="{{ DEFAULT_LANG }}">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="{{ SITE_DESCRIPTION }}">
+    <meta name="keywords" content="{{ SITE_KEYWORDS }}">
+    <meta name="author" content="{{ AUTHOR }}">
+    <meta name="image" content="{{ AUTHOR_IMAGE_URL }}">
+    {% block meta %}
+      <!-- Twitter -->
+      <meta name="twitter:card" content="summary">
+      <meta name="twitter:title" content="{{ SITENAME }}">
+      <meta name="twitter:description" content="{{ SITE_DESCRIPTION }}">
+      <meta name="twitter:site" content="{{ AUTHOR_TWITTER_ACCOUNT }}">
+      <meta name="twitter:creator" content="{{ AUTHOR_TWITTER_ACCOUNT }}">
+      <meta name="twitter:image:src" content="{{ AUTHOR_IMAGE_URL }}">
+      <!-- Open Graph general (Facebook, Pinterest & Google+) -->
+      <meta name="og:title" content="{{ SITENAME }}">
+      <meta name="og:description" content="{{ SITE_DESCRIPTION }}">
+      <meta name="og:image" content="{{ AUTHOR_IMAGE_URL }}">
+      <meta name="og:url" content="{{ SITEURL }}">
+      <meta name="og:site_name" content="{{ SITENAME }}">
+      <meta name="og:locale" content="en_US">
+      <meta name="og:type" content="article">
+      <!-- Open Graph - Article -->
+      <meta name="article:section" content="Technology">
+      <meta name="article:author" content="{{ AUTHOR }}">
+      <meta name="article:tag" content="{{ SITE_KEYWORDS }}">
+    {% endblock %}
+
+    <title>{% block title %}{{ SITENAME }}{%endblock%}</title>
+
+    <link rel="icon" href="/favicon.ico" type="image/png">
+    {% if FEED_ALL_ATOM %}
+    <link href="{{ FEED_DOMAIN }}/{{ FEED_ALL_ATOM }}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} Atom Feed" />
+    {% endif %}
+    {% if FEED_ALL_RSS %}
+    <link href="{{ FEED_DOMAIN }}/{{ FEED_ALL_RSS }}" type="application/rss+xml" rel="alternate" title="{{ SITENAME }} RSS Feed" />
+    {% endif %}
+
+    <!-- Bootstrap core CSS -->
+    <link href="{{ SITEURL }}/theme/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+    {% block css %}
+    <!-- Custom styles for this template -->
+    <link href="{{ SITEURL }}/theme/css/base.css" rel="stylesheet">
+    {% endblock %}
+
+    <!--[if IE]>
+        <script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+    {% include "navbar.html" %}
+
+    <!-- Page Content -->
+    <div class="container">
+        <div class="row">
+            <!-- Blog Entries Column -->
+            <div class="col-md-8">
+                {% block content %}
+                {% endblock %}
+            </div>
+
+            <!-- Sidebar Widgets Column -->
+            <div class="col-md-4">
+                {% include "sidebar.html" %}
+            </div>
+        </div>
+        <!-- /.row -->
+    </div>
+    <!-- /.container -->
+
+
+{% include "footer.html" %}
+
+{% include "analytics.html" %}
+
+<!-- Bootstrap core JavaScript -->
+<script src="{{ SITEURL }}/theme/vendor/jquery/jquery.min.js"></script>
+<script src="{{ SITEURL }}/theme/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+{% block scripts %}
+{% endblock %}
+</body>
+</html>

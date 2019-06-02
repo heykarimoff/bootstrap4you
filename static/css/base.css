@@ -1,0 +1,47 @@
+body {
+    padding-top: 54px;
+}
+
+@media (min-width: 992px) {
+    body {
+        padding-top: 56px;
+    }
+}
+
+code, pre {
+    border-radius: 4px;
+    background-color: #f4f9ff;
+    font-size: 13px
+}
+
+code {
+    padding: 4px 6px;
+    white-space: nowrap
+}
+
+code.red {color:red;}
+code.green {color: green;}
+
+pre {
+    white-space: pre-wrap;
+    display: block;
+    padding: 10px;
+    margin: 0 0 11px;
+    line-height: 1.4;
+    word-break: break-all;
+    word-wrap: break-word;
+    border: 1px solid #ccc
+}
+
+blockquote {
+    font-style: italic;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 20px;
+    padding-left: 15px;
+    border-left: 3px solid #ccc;
+}
+
+.list-inline-item:not(:last-child) {
+    margin-right: 0.3em;
+}
